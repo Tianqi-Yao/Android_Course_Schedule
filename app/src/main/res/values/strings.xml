@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Android_Course_Schedule</string>
+    <string name="app_name">Course Schedule</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="back">Back</string>
+    <string name="home">home</string>
+    <string name="profile">profile</string>
+    <string name="setting">setting</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="xxx">xxx</string>
+    <string name="button">Button</string>
 </resources>
