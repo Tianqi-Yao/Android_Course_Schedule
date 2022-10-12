@@ -10,4 +10,8 @@
     <string name="password">password</string>
     <string name="xxx">xxx</string>
     <string name="button">Button</string>
+    <string name="className">Class Name</string>
+    <string name="location">Location</string>
+    <string name="time">Time</string>
+    <string name="submit">submit</string>
 </resources>

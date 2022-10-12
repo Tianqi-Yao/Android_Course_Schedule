@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         bt.setOnClickListener {
             Log.d("test", "onclick btn")
-            println("this is print test")
-            Toast.makeText(this, "this is toast test", Toast.LENGTH_LONG).show()
             jumpFun()
         }
 
@@ -26,8 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun jumpFun() {
         val intent = Intent(this, MainActivity2::class.java)
-        val msg = "message"
-        intent.putExtra("msg",msg)
         startActivity(intent)
 
     }

@@ -1,6 +1,7 @@
 package com.example.android_course_schedule
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,18 +20,14 @@ class MainActivity2 : AppCompatActivity() {
 
         val bt = findViewById<Button>(R.id.btn_back)
 
-        val msg = intent.getStringExtra("msg")
-
-        bt.text = msg
-
         bt.setOnClickListener {
             finish()
         }
 
         // recyclerView
         val itemsList = ArrayList<Items>()
-        for (i in 0..100) {
-            val items = Items("name$i", "FL${2000+i}")
+        for (i in 0..104) {
+            val items = Items("", "")
             itemsList.add(items)
         }
         Log.d("test", itemsList.toString())
@@ -62,24 +59,6 @@ class MainActivity2 : AppCompatActivity() {
         scrollView0.setScrollView(scrollView1)
         scrollView1.setScrollView(scrollView0)
 
-
-//        val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
-//
-//        val adapter = RecyclerViewAdapter(itemsList)
-//        val layoutManager = GridLayoutManager(applicationContext,7)
-
-//        recyclerView.adapter = adapter
-//        recyclerView.layoutManager = layoutManager
-////        recyclerView.itemAnimator = DefaultItemAnimator()
-//        recyclerView.setHasFixedSize(true)
-//
-//        //click fun
-//        adapter.setOnItemClickListener(object : RecyclerViewAdapter.ClickListener<Items> {
-//            override fun onClick(view: View?, data: Items, position: Int) {
-//                Toast.makeText(applicationContext, "Position = $position  data = ${data.courseName}", Toast.LENGTH_LONG).show()
-//            }
-//        })
-
     }
 
     private fun initRecyclerView(itemsList : ArrayList<Items>, viewID : Int, allowedClick: Boolean, layoutManager: RecyclerView.LayoutManager){
@@ -97,14 +76,18 @@ class MainActivity2 : AppCompatActivity() {
         adapter.setOnItemClickListener(object : RecyclerViewAdapter.ClickListener<Items> {
             override fun onClick(view: View?, data: Items, position: Int) {
                 if (allowedClick) {
-                    Toast.makeText(
-                        applicationContext,
-                        "Position = $position  data = ${data.courseName}",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    jumpFun()
                 }
             }
         })
+
+    }
+
+    private fun jumpFun() {
+        val intent = Intent(this, newClass::class.java)
+        val msg = "message"
+        intent.putExtra("msg",msg)
+        startActivity(intent)
 
     }
 }
