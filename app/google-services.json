@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "219449256328",
+    "firebase_url": "https://android-course-schedule-default-rtdb.firebaseio.com",
+    "project_id": "android-course-schedule",
+    "storage_bucket": "android-course-schedule.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219449256328:android:3a48f2d231c18d481eb23d",
+        "android_client_info": {
+          "package_name": "com.example.android_course_schedule"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219449256328-2r6d4nmlfvhu035dpj6445er81qtnehq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWmrnI_U13fTcEcjnz15tkPh1MiTx4oYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219449256328-2r6d4nmlfvhu035dpj6445er81qtnehq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

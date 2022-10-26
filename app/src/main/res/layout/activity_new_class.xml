@@ -7,7 +7,7 @@
     tools:context=".newClass">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_coursename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/et_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -34,11 +34,11 @@
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintStart_toEndOf="@+id/tv_location"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/et_coursename"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/et_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -49,7 +49,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/tv_time"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/et_location"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
@@ -88,8 +88,9 @@
         android:layout_marginStart="151dp"
         android:layout_marginTop="100dp"
         android:text="@string/submit"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_time" />
 
     <Button
         android:id="@+id/btn_back_newclass"
@@ -98,6 +99,7 @@
         android:layout_marginStart="152dp"
         android:layout_marginTop="80dp"
         android:text="@string/back"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
