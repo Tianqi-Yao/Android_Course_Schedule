@@ -1,0 +1,46 @@
+[
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.651305295368175,
+                "lng": -82.34290822742967
+            }
+        },
+        "name": "Library West",
+        "rating": 4.2,
+        "vicinity": "1545 W University Ave, Gainesville, FL 32603"
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.65163912793504,
+                "lng": -82.34101912673214
+            }
+        },
+        "name": "Matherly Hall",
+        "rating": 4.5,
+        "vicinity": "1405 W University Ave, Gainesville, FL 32611"
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.648981281315688,
+                "lng": -82.34413084328156
+            }
+        },
+        "name": "Turlington Hall",
+        "rating": 4,
+        "vicinity": "330 Newell Dr, Gainesville, FL 32611"
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.64540738150323,
+                "lng": -82.34801280448526
+            }
+        },
+        "name": "Reitz Union",
+        "rating": 5,
+        "vicinity": "737 Reitz Union Drive, Gainesville, FL 32611"
+    }
+]

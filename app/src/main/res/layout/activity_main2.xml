@@ -105,12 +105,12 @@
             android:text="@string/home" />
 
         <Button
-            android:id="@+id/btn_profile"
+            android:id="@+id/btn_map"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/profile" />
+            android:text="@string/map" />
 
         <Button
             android:id="@+id/btn_setting"
@@ -126,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/back" />
+            android:text="@string/logout" />
 
     </LinearLayout>
 

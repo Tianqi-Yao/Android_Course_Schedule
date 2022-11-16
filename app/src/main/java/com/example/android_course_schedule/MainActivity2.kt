@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -24,10 +25,17 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         val bt = findViewById<Button>(R.id.btn_back)
+        val bt_map = findViewById<Button>(R.id.btn_map)
 
         bt.setOnClickListener {
+            Firebase.auth.signOut()
             finish()
         }
+
+        bt_map.setOnClickListener {
+            jumpFun(MapPointer::class.java)
+        }
+
 
         // recyclerView
         loadData()
@@ -78,15 +86,15 @@ class MainActivity2 : AppCompatActivity() {
             override fun onClick(view: View?, data: Items, position: Int) {
                 if (allowedClick) {
                     Log.d("test","position: $position")
-                    jumpFun(position)
+                    jumpFun(newClass::class.java,position)
                 }
             }
         })
 
     }
 
-    private fun jumpFun(position: Int) {
-        val intent = Intent(this, newClass::class.java)
+    private fun jumpFun(toActivity:Class<*>,position: Int = -1) {
+        val intent = Intent(this, toActivity)
         intent.putExtra("position", position)
         startActivity(intent)
 
