@@ -3,13 +3,22 @@ package com.example.android_course_schedule
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
+import android.view.View
+import android.widget.*
+import com.example.android_course_schedule.place.Place
+import com.example.android_course_schedule.place.PlacesReader
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 
 class newClass : AppCompatActivity() {
+    private lateinit var location: String
+    private val TAG: String = "test"
+
+    private val places: List<Place> by lazy {
+        PlacesReader(this).read()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_class)
@@ -21,11 +30,27 @@ class newClass : AppCompatActivity() {
         val uid  = intent.getStringExtra("uid")
 
         val usernameET = findViewById<EditText>(R.id.et_coursename)
-        val locationET = findViewById<EditText>(R.id.et_location)
+        val locationSP = findViewById<Spinner>(R.id.spinner_location)
+
+//        Log.d(TAG, "onCreate22->places1111: ${places}")
+        val locationNameList = ArrayList<String>()
+        places.forEach { locationNameList.add(it.name) }
+//        Log.d(TAG, "onCreate22: $locationNameList")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, locationNameList)
+        locationSP.adapter = adapter
+
+        locationSP.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
+                Toast.makeText(baseContext, "choose" + locationNameList[pos], Toast.LENGTH_SHORT).show()
+                location = locationNameList[pos]
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
 
         btnSubmit.setOnClickListener {
             val username = usernameET.text.toString()
-            val location = locationET.text.toString()
+//            val location = locationET.text.toString()
             writeData(position, username, location, uid!!)
             finish()
         }

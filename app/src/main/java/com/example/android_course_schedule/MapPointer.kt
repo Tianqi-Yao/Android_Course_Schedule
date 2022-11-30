@@ -15,6 +15,7 @@
 package com.example.android_course_schedule
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -77,6 +78,7 @@ class MapPointer : AppCompatActivity() {
         clusterManager.markerCollection.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))
 
         // Add the places to the ClusterManager
+        Log.d(TAG, "addClusteredMarkers->places: $places")
         clusterManager.addItems(places)
         clusterManager.cluster()
 

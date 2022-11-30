@@ -21,18 +21,16 @@
         app:layout_constraintStart_toEndOf="@+id/tv_classname"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_location"
+    <Spinner
+        android:id="@+id/spinner_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="52dp"
-        android:ems="10"
-        android:hint="@string/location"
+        android:contentDescription="@string/location"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:minWidth="200dp"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
         app:layout_constraintStart_toEndOf="@+id/tv_location"
         app:layout_constraintTop_toBottomOf="@+id/et_coursename"
         tools:ignore="DuplicateSpeakableTextCheck" />
