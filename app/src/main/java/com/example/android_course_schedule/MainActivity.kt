@@ -22,9 +22,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
 
-
         val bt = findViewById<Button>(R.id.btn_login)
         val bt_signup = findViewById<Button>(R.id.btn_signup)
+
+        bt_signup.setOnClickListener {
+            jumpFun(newUser::class.java,"")
+        }
 
         bt.setOnClickListener {
             val username = findViewById<EditText>(R.id.et_username).text.toString()
@@ -51,8 +54,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun jumpFun(toActivity:Class<*>) {
+    private fun jumpFun(toActivity:Class<*>,uid:String) {
         val intent = Intent(this, toActivity)
+        intent.putExtra("uid",uid)
         startActivity(intent)
     }
 
@@ -78,7 +82,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
-            jumpFun(MainActivity2::class.java)
+            Log.d(TAG, "uid: ${user.uid}")
+            jumpFun(MainActivity2::class.java,user.uid)
         }
     }
 }

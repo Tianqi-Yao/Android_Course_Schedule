@@ -21,14 +21,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/xxx" />
+                android:text="@string/xxx"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/tv_courseLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/xxx" />
+                android:text="@string/xxx"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

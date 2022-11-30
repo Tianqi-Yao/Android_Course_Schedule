@@ -1,7 +1,6 @@
 package com.example.android_course_schedule
 
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,11 +20,14 @@ import com.google.firebase.ktx.Firebase
 
 
 class MainActivity2 : AppCompatActivity() {
+    private lateinit var uid:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
         val bt = findViewById<Button>(R.id.btn_back)
         val bt_map = findViewById<Button>(R.id.btn_map)
+
+        uid = intent.getStringExtra("uid").toString()
 
         bt.setOnClickListener {
             Firebase.auth.signOut()
@@ -42,17 +44,15 @@ class MainActivity2 : AppCompatActivity() {
 
         // left data
         val leftItemsList = ArrayList<Items>()
-        for (i in 6..20) {
-            val items = Items("$i o'clock", "")
+        val timeList = ArrayList<String>(listOf("7:25~\n8:15","8:30~\n9:20","9:35~\n10:25","10:40~\n11:30","11:45~\n12:35","12:50~\n13:40","13:55~\n14:45","15:00~\n15:50","16:05~\n16:55","17:10~\n18:00","18:15~\n19:05","19:20~\n20:10","20:20~\n21:10","21:20~\n22:10"))
+        for (i in timeList) {
+            val items = Items("$i", "")
             leftItemsList.add(items)
         }
 
         // top data
-        val topItemsList = ArrayList<Items>()
-        for (i in 1..7) {
-            val items = Items("day $i", "")
-            topItemsList.add(items)
-        }
+        val topItemsList = ArrayList<Items>(listOf(Items("Mon", "day"),Items("Tues", "day"),Items("Wed", "day"),Items("Thurs", "day"),Items("Fri", "day"),Items("Sat", "day"),Items("Sun", "day")))
+
 
 //        initRecyclerView(itemsList,R.id.recycleView,true,GridLayoutManager(applicationContext,7))
 
@@ -96,6 +96,7 @@ class MainActivity2 : AppCompatActivity() {
     private fun jumpFun(toActivity:Class<*>,position: Int = -1) {
         val intent = Intent(this, toActivity)
         intent.putExtra("position", position)
+        intent.putExtra("uid", uid)
         startActivity(intent)
 
     }
@@ -103,22 +104,24 @@ class MainActivity2 : AppCompatActivity() {
     private fun loadData() {
         // Read from the database
         val database = Firebase.database
-        val myRef = database.reference.child("position")
+        val myRef = database.reference.child(uid).child("position")
         Log.d("test","myRef: $myRef")
         myRef.addValueEventListener(object: ValueEventListener {
-
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
+                Log.d("test", "onDataChange: starting loading!!!!!!!!!!!!!!!!!!"+snapshot)
                 val value = snapshot.getValue<Map<String, Any>>()
-                if (value != null) {
+//                val value = snapshot.value as Map<String, Any>?
+                Log.d("test", "onDataChange-->value: $value")
+//                if (value != null) {
                     val itemsList = ArrayList<Items>()
                     loadMapData(value,itemsList)
                     initRecyclerView(itemsList,R.id.recycleView,true,GridLayoutManager(applicationContext,7))
-                }
-                else{
-                    Log.d("test","do not have data from position")
-                }
+//                }
+//                else{
+//                    Log.d("test","do not have data from position")
+//                }
             }
             override fun onCancelled(error: DatabaseError) {
                 Log.w("test", "Failed to read value.", error.toException())
@@ -128,11 +131,11 @@ class MainActivity2 : AppCompatActivity() {
     }
 
 
-    private fun loadMapData(value: Map<String, Any>,itemsList : ArrayList<Items>) {
+    private fun loadMapData(value: Map<String, Any>?, itemsList: ArrayList<Items>) {
 
-        for (i in 0..104) {
-            Log.d("test", "map value is: $i  ${value["$i"]}")
-            val courseInfo: Any? = value["$i"]
+        for (i in 0..97) {
+//            Log.d("test", "map value is: $i  ${value["$i"]}")
+            val courseInfo: Any? = value?.get("p$i")
             if (courseInfo is Map<*, *>) {
                 val courseName: String = courseInfo["courseName"] as String
                 val location: String = courseInfo["location"] as String

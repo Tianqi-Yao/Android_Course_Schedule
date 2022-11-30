@@ -24,7 +24,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/xxx" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
         </androidx.cardview.widget.CardView>
 
         <com.example.android_course_schedule.SyncHorizontalScrollView

@@ -18,6 +18,7 @@ class newClass : AppCompatActivity() {
         val btnSubmit = findViewById<Button>(R.id.btn_submit)
 
         val position  = intent.getIntExtra("position",-1)
+        val uid  = intent.getStringExtra("uid")
 
         val usernameET = findViewById<EditText>(R.id.et_coursename)
         val locationET = findViewById<EditText>(R.id.et_location)
@@ -25,7 +26,7 @@ class newClass : AppCompatActivity() {
         btnSubmit.setOnClickListener {
             val username = usernameET.text.toString()
             val location = locationET.text.toString()
-            writeData(position, username, location)
+            writeData(position, username, location, uid!!)
             finish()
         }
 
@@ -35,13 +36,13 @@ class newClass : AppCompatActivity() {
     }
 
 
-    private fun writeData(position:Int, courseName: String, location: String){
+    private fun writeData(position:Int, courseName: String, location: String,uid:String){
         Log.d("test","start writing data")
         // Write a message to the database
         val database = Firebase.database
 //        val myRef = database.reference.child("message").child("position")
 //        myRef.setValue("1")
-        val myRef = database.reference.child("position")
+        val myRef = database.reference.child(uid).child("position")
 //        val key = myRef.push().key
 //        val classInfo = mutableMapOf<String, String>("中国" to "China", "英国" to "England")
         Log.d("test", "courseName: $courseName location: $location ")
@@ -51,9 +52,9 @@ class newClass : AppCompatActivity() {
         }
 //        myRef.setValue(classInfo)
         val childUpdates = mutableMapOf<String, Any>(
-            "/$position" to courseInfo,
+            "/p$position" to courseInfo,
         )
-        Log.d("test","$position")
+        Log.d("test","$position",)
         myRef.updateChildren(childUpdates)
 
     }

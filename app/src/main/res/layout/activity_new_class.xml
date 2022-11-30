@@ -10,8 +10,8 @@
         android:id="@+id/et_coursename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="156dp"
         android:ems="10"
         android:hint="@string/className"
         android:importantForAutofill="no"
@@ -25,8 +25,8 @@
         android:id="@+id/et_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/location"
         android:importantForAutofill="no"
@@ -37,29 +37,13 @@
         app:layout_constraintTop_toBottomOf="@+id/et_coursename"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
-    <EditText
-        android:id="@+id/et_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="@string/time"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_time"
-        app:layout_constraintTop_toBottomOf="@+id/et_location"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
     <TextView
         android:id="@+id/tv_classname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="172dp"
         android:text="@string/username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,39 +51,31 @@
         android:id="@+id/tv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="268dp"
         android:text="@string/location"
-        app:layout_constraintStart_toStartOf="@+id/tv_classname"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
-        android:text="@string/time"
-        app:layout_constraintStart_toStartOf="@+id/tv_location"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/submit"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_time" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_back_newclass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_back_newclass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="144dp"
         android:text="@string/back"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
