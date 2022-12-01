@@ -1,6 +1,5 @@
 package com.example.android_course_schedule
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,9 +22,9 @@ class RecyclerViewAdapterForBar internal constructor(private val itemsList: List
 //        holder.courseLocation.text = item.courseDetail1
 
         //click fun
-        holder.itemView.setOnClickListener{
-            view -> clickListener!!.onClick(view,item,position)
-        }
+//        holder.itemView.setOnClickListener{
+//            view -> clickListener!!.onClick(view,item,position)
+//        }
     }
 
     override fun getItemCount(): Int {
@@ -40,13 +39,13 @@ class RecyclerViewAdapterForBar internal constructor(private val itemsList: List
     }
 
     // click fun
-    interface ClickListener<T> {
-        fun onClick(view: View?, data: T, position: Int)
-    }
-
-    private var clickListener: ClickListener<Items>? = null
-
-    fun setOnItemClickListener(clickListener: ClickListener<Items>) {
-        this.clickListener = clickListener
-    }
+//    interface ClickListener<T> {
+//        fun onClick(view: View?, data: T, position: Int)
+//    }
+//
+//    private var clickListener: ClickListener<Items>? = null
+//
+//    fun setOnItemClickListener(clickListener: ClickListener<Items>) {
+//        this.clickListener = clickListener
+//    }
 }

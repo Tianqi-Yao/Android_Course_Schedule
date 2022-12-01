@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg3"
     tools:context=".SettingActivity">
 
 
@@ -11,7 +12,8 @@
         android:id="@+id/linearLayout2_setting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -23,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/menuText"
             android:text="@string/home" />
 
         <Button
@@ -31,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/menuText"
             android:text="@string/map" />
 
         <Button
@@ -39,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/menuText"
             android:text="@string/setting" />
 
         <Button
@@ -47,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/menuText"
             android:text="@string/button_4" />
 
     </LinearLayout>
@@ -57,9 +63,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:text="@string/log_out"
+        android:backgroundTint="@color/btn"
+        android:textColor="@color/menuText"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2_setting"
         app:layout_constraintEnd_toEndOf="@+id/bt_update_setting"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/bt_update_setting" />
 
     <Button
@@ -68,6 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:text="@string/change_user_name"
+        android:backgroundTint="@color/btn"
+        android:textColor="@color/menuText"
         app:layout_constraintBottom_toTopOf="@+id/bt_logout_setting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -76,10 +85,12 @@
         android:id="@+id/tv_uid_setting"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="212dp"
         android:minWidth="100dp"
         android:text="@string/xxx"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#151D21"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +104,8 @@
         android:minWidth="100dp"
         android:text="@string/xxx"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#151D21"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/tv_uid_setting"
         app:layout_constraintTop_toBottomOf="@+id/tv_uid_setting" />
 
@@ -101,8 +114,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/user_info"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#6D4C41"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
