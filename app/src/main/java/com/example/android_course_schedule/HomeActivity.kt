@@ -49,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
         val leftItemsList = ArrayList<Items>()
         val timeList = listOf("7:25\nto\n8:15","8:30\nto\n9:20","9:35\nto\n10:25","10:40\nto\n11:30","11:45\nto\n12:35","12:50\nto\n13:40","13:55\nto\n14:45","15:00\nto\n15:50","16:05\nto\n16:55","17:10\nto\n18:00","18:15\nto\n19:05","19:20\nto\n20:10","20:20\nto\n21:10","21:20\nto\n22:10")
         for (i in timeList) {
-            val items = Items(1,"$i")
+            val items = Items(1,i)
             leftItemsList.add(items)
         }
 
@@ -57,16 +57,16 @@ class HomeActivity : AppCompatActivity() {
         val dayList = listOf("Mon", "Tues", "Wed", "Thurs","Fri", "Sat", "Sun")
         val topItemsList = ArrayList<Items>()
         for (i in dayList) {
-            val items = Items(1,"$i")
+            val items = Items(1,i)
             topItemsList.add(items)
         }
 
 //        initRecyclerView(itemsList,R.id.recycleView,true,GridLayoutManager(applicationContext,7))
 
         //left
-        initBarRecyclerView(leftItemsList,R.id.left_recyclerView,false,GridLayoutManager(applicationContext,1))
+        initBarRecyclerView(leftItemsList,R.id.left_recyclerView,GridLayoutManager(applicationContext,1))
         //top
-        initBarRecyclerView(topItemsList,R.id.top_recyclerView,false,GridLayoutManager(applicationContext,7))
+        initBarRecyclerView(topItemsList,R.id.top_recyclerView,GridLayoutManager(applicationContext,7))
 
         // sync roll
         val scrollView0 = findViewById<SyncHorizontalScrollView>(R.id.top_scroll)
@@ -76,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun initRecyclerView(itemsList : ArrayList<Items>, viewID : Int, allowedClick: Boolean, layoutManager: RecyclerView.LayoutManager){
+    private fun initRecyclerView(itemsList : ArrayList<Items>, viewID : Int, layoutManager: RecyclerView.LayoutManager){
         Log.d("test","id: $viewID")
         val recyclerView = findViewById<RecyclerView>(viewID)
 
@@ -91,16 +91,14 @@ class HomeActivity : AppCompatActivity() {
 
         adapter.setOnItemClickListener(object : RecyclerViewAdapter.ClickListener<Items> {
             override fun onClick(view: View?, data: Items, position: Int) {
-                if (allowedClick) {
-                    Log.d("test","position: $position")
-                    jumpFun(newClassActivity::class.java,position)
-                }
+                Log.d("test","position: $position")
+                jumpFun(newClassActivity::class.java,position)
             }
         })
 
     }
 
-    private fun initBarRecyclerView(itemsList : ArrayList<Items>, viewID : Int, allowedClick: Boolean, layoutManager: RecyclerView.LayoutManager){
+    private fun initBarRecyclerView(itemsList : ArrayList<Items>, viewID : Int, layoutManager: RecyclerView.LayoutManager){
         Log.d("test","id: $viewID")
         val recyclerView = findViewById<RecyclerView>(viewID)
 
@@ -137,7 +135,7 @@ class HomeActivity : AppCompatActivity() {
 //                if (value != null) {
                     val itemsList = ArrayList<Items>()
                     loadMapData(value,itemsList)
-                    initRecyclerView(itemsList,R.id.recycleView,true,GridLayoutManager(applicationContext,7))
+                    initRecyclerView(itemsList,R.id.recycleView,GridLayoutManager(applicationContext,7))
 //                }
 //                else{
 //                    Log.d("test","do not have data from position")

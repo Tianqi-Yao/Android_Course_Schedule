@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class SettingActivity : AppCompatActivity() {
@@ -97,12 +94,12 @@ class SettingActivity : AppCompatActivity() {
                 }
 
 //                val photoUrl = profile.photoUrl
-                val isEmailVerified = profile.isEmailVerified
+//                val isEmailVerified = profile.isEmailVerified
                 val phoneNumber = profile.phoneNumber
                 Log.d("test", "onCreate: providerId:$providerId, name:$name , $email, $phoneNumber, $uid")
 
-                findViewById<TextView>(R.id.tv_uid_setting).text = "Email: "+email
-                findViewById<TextView>(R.id.tv_username_setting).text = "Name: "+name
+                findViewById<TextView>(R.id.tv_uid_setting).text = "Email: $email"
+                findViewById<TextView>(R.id.tv_username_setting).text = "Name: $name"
 //                findViewById<TextView>(R.id.tv_isEmailVerified_setting).text = "IsEmailVerified: "+isEmailVerified.toString()
             }
         }
