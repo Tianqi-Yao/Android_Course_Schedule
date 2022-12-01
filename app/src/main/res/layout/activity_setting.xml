@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SettingActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2_setting"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout2_setting"
@@ -60,7 +47,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/logout" />
+            android:text="@string/button_4" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_logout_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="@string/log_out"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2_setting"
+        app:layout_constraintEnd_toEndOf="@+id/bt_update_setting"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/bt_update_setting" />
+
+    <Button
+        android:id="@+id/bt_update_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:text="@string/change_user_name"
+        app:layout_constraintBottom_toTopOf="@+id/bt_logout_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_uid_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="148dp"
+        android:minWidth="100dp"
+        android:text="@string/xxx"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:minWidth="100dp"
+        android:text="@string/xxx"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="@+id/tv_uid_setting"
+        app:layout_constraintTop_toBottomOf="@+id/tv_uid_setting" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

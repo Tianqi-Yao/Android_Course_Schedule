@@ -2,7 +2,7 @@
     <string name="app_name">Course Schedule</string>
     <string name="signup_app_name">Create your account</string>
     <string name="login">Log In</string>
-    <string name="logout">Log Out</string>
+    <string name="button_4">search</string>
     <string name="signup">Sign Up</string>
     <string name="back">Back</string>
     <string name="home">home</string>
@@ -22,4 +22,11 @@
     <string name="error_invalid_email">invalid email</string>
     <string name="error_user_exists">user exists</string>
     <string name="schedule">Schedule</string>
+    <string name="log_out">Log Out</string>
+    <string name="id">ID</string>
+    <string name="gender">Gender</string>
+    <string name="major">Major</string>
+    <string name="update">Update</string>
+    <string name="phonenumber">PhoneNumber</string>
+    <string name="change_user_name">Change User Name</string>
 </resources>

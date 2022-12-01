@@ -18,7 +18,7 @@ class RecyclerViewAdapterForBar internal constructor(private val itemsList: List
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = itemsList[position]
-        Log.d("test", "onBindViewHolder->item: $item")
+//        Log.d("test", "onBindViewHolder->item: $item")
         holder.courseName.text = item.courseName
 //        holder.courseLocation.text = item.courseDetail1
 

@@ -54,12 +54,12 @@ class newUserActivity : AppCompatActivity() {
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
 
-                    user!!.sendEmailVerification()
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                Log.d(TAG, "Email sent.")
-                            }
-                        }
+//                    user!!.sendEmailVerification()
+//                        .addOnCompleteListener { task ->
+//                            if (task.isSuccessful) {
+//                                Log.d(TAG, "Email sent.")
+//                            }
+//                        }
 
                     updateUI(user)
                 } else {
