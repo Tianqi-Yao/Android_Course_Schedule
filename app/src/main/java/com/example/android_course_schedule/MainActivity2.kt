@@ -61,9 +61,9 @@ class MainActivity2 : AppCompatActivity() {
 //        initRecyclerView(itemsList,R.id.recycleView,true,GridLayoutManager(applicationContext,7))
 
         //left
-        initRecyclerView(leftItemsList,R.id.left_recyclerView,false,GridLayoutManager(applicationContext,1))
+        initBarRecyclerView(leftItemsList,R.id.left_recyclerView,false,GridLayoutManager(applicationContext,1))
         //top
-        initRecyclerView(topItemsList,R.id.top_recyclerView,false,GridLayoutManager(applicationContext,7))
+        initBarRecyclerView(topItemsList,R.id.top_recyclerView,false,GridLayoutManager(applicationContext,7))
 
         // sync roll
         val scrollView0 = findViewById<SyncHorizontalScrollView>(R.id.top_scroll)
@@ -94,6 +94,19 @@ class MainActivity2 : AppCompatActivity() {
                 }
             }
         })
+
+    }
+
+    private fun initBarRecyclerView(itemsList : ArrayList<Items>, viewID : Int, allowedClick: Boolean, layoutManager: RecyclerView.LayoutManager){
+        Log.d("test","id: $viewID")
+        val recyclerView = findViewById<RecyclerView>(viewID)
+
+        val adapter = RecyclerViewAdapterForBar(itemsList)
+//        val layoutManager = GridLayoutManager(applicationContext,7)
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
 
     }
 

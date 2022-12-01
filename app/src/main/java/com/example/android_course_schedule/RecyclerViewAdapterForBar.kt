@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter internal constructor(private val itemsList: List<Items>) :
-    RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
+class RecyclerViewAdapterForBar internal constructor(private val itemsList: List<Items>) :
+    RecyclerView.Adapter<RecyclerViewAdapterForBar.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.items, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_one_line, parent, false)
         return MyViewHolder(view)
     }
 
@@ -20,7 +20,7 @@ class RecyclerViewAdapter internal constructor(private val itemsList: List<Items
         val item = itemsList[position]
         Log.d("test", "onBindViewHolder->item: $item")
         holder.courseName.text = item.courseName
-        holder.courseLocation.text = item.courseDetail1
+//        holder.courseLocation.text = item.courseDetail1
 
         //click fun
         holder.itemView.setOnClickListener{
@@ -33,8 +33,8 @@ class RecyclerViewAdapter internal constructor(private val itemsList: List<Items
     }
 
     class MyViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var courseName: TextView = itemView.findViewById(R.id.tv_courseName)
-        var courseLocation: TextView = itemView.findViewById(R.id.tv_courseLocation)
+        var courseName: TextView = itemView.findViewById(R.id.tv_one_line_courseName)
+//        var courseLocation: TextView = itemView.findViewById(R.id.tv_courseLocation)
 
 
     }
