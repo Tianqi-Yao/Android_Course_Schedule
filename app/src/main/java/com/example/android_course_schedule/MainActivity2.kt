@@ -44,7 +44,7 @@ class MainActivity2 : AppCompatActivity() {
 
         // left data
         val leftItemsList = ArrayList<Items>()
-        val timeList = listOf("7:25~\n8:15","8:30~\n9:20","9:35~\n10:25","10:40~\n11:30","11:45~\n12:35","12:50~\n13:40","13:55~\n14:45","15:00~\n15:50","16:05~\n16:55","17:10~\n18:00","18:15~\n19:05","19:20~\n20:10","20:20~\n21:10","21:20~\n22:10")
+        val timeList = listOf("7:25\nto\n8:15","8:30\nto\n9:20","9:35\nto\n10:25","10:40\nto\n11:30","11:45\nto\n12:35","12:50\nto\n13:40","13:55\nto\n14:45","15:00\nto\n15:50","16:05\nto\n16:55","17:10\nto\n18:00","18:15\nto\n19:05","19:20\nto\n20:10","20:20\nto\n21:10","21:20\nto\n22:10")
         for (i in timeList) {
             val items = Items(1,"$i")
             leftItemsList.add(items)

@@ -42,5 +42,79 @@
         "name": "Reitz Union",
         "rating": 5,
         "vicinity": "737 Reitz Union Drive, Gainesville, FL 32611"
+    },
+
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.643661124046503,
+                "lng":  -82.34629508941109
+            }
+        },
+        "name": "Psychology Building",
+        "rating": 6,
+        "vicinity": "945 CENTER DR, GAINESVILLE, FL 32611"
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.646012643683196,
+                "lng": -82.34531793358913
+            }
+        },
+        "name": "Mccarty Annex A",
+        "rating": 7,
+        "vicinity": "1728 MCCARTY DR, GAINESVILLE, FL 32611"
+
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.646716866547216,
+                "lng":  -82.34429883173976
+            }
+        },
+        "name": "McCarty Hall D",
+        "rating": 8,
+        "vicinity": "1604 MCCARTY DR, GAINESVILLE, FL 32611"
+
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.65030143454441,
+                "lng": -82.34209514708215
+            }
+        },
+        "name": "Hough Hall",
+        "rating": 9,
+        "vicinity": "1404 UNION RD,GAINESVILLE, FL 32611"
+
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.651063365210874,
+                "lng": -82.34412861639716
+            }
+        },
+        "name": "Chemistry Laboratory",
+        "rating": 10,
+        "vicinity": "125 Buckman Dr, Gainesville, FL 32611"
+
+    },
+    {
+        "geometry": {
+            "location": {
+                "lat": 29.649683932224526,
+                "lng": -82.34543181639714
+            }
+        },
+        "name": "Pugh Hall",
+        "rating": 10,
+        "vicinity": "296 BUCKMAN DR, GAINESVILLE, FL 32611"
+
     }
+
+
 ]

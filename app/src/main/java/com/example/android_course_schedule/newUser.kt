@@ -53,6 +53,14 @@ class newUser : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
+
+                    user!!.sendEmailVerification()
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Log.d(TAG, "Email sent.")
+                            }
+                        }
+
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
