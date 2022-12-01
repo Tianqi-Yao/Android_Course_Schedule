@@ -18,7 +18,7 @@ class RecyclerViewAdapter internal constructor(private val itemsList: List<Items
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = itemsList[position]
         holder.courseName.text = item.courseName
-        holder.courseLocation.text = item.courseLocation
+        holder.courseLocation.text = item.courseDetail1
 
         //click fun
         holder.itemView.setOnClickListener{

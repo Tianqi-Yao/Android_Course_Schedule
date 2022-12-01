@@ -44,15 +44,19 @@ class MainActivity2 : AppCompatActivity() {
 
         // left data
         val leftItemsList = ArrayList<Items>()
-        val timeList = ArrayList<String>(listOf("7:25~\n8:15","8:30~\n9:20","9:35~\n10:25","10:40~\n11:30","11:45~\n12:35","12:50~\n13:40","13:55~\n14:45","15:00~\n15:50","16:05~\n16:55","17:10~\n18:00","18:15~\n19:05","19:20~\n20:10","20:20~\n21:10","21:20~\n22:10"))
+        val timeList = listOf("7:25~\n8:15","8:30~\n9:20","9:35~\n10:25","10:40~\n11:30","11:45~\n12:35","12:50~\n13:40","13:55~\n14:45","15:00~\n15:50","16:05~\n16:55","17:10~\n18:00","18:15~\n19:05","19:20~\n20:10","20:20~\n21:10","21:20~\n22:10")
         for (i in timeList) {
-            val items = Items("$i", "")
+            val items = Items(1,"$i")
             leftItemsList.add(items)
         }
 
         // top data
-        val topItemsList = ArrayList<Items>(listOf(Items("Mon", "day"),Items("Tues", "day"),Items("Wed", "day"),Items("Thurs", "day"),Items("Fri", "day"),Items("Sat", "day"),Items("Sun", "day")))
-
+        val dayList = listOf("Mon", "Tues", "Wed", "Thurs","Fri", "Sat", "Sun")
+        val topItemsList = ArrayList<Items>()
+        for (i in dayList) {
+            val items = Items(1,"$i")
+            topItemsList.add(items)
+        }
 
 //        initRecyclerView(itemsList,R.id.recycleView,true,GridLayoutManager(applicationContext,7))
 
@@ -139,11 +143,11 @@ class MainActivity2 : AppCompatActivity() {
             if (courseInfo is Map<*, *>) {
                 val courseName: String = courseInfo["courseName"] as String
                 val location: String = courseInfo["location"] as String
-                val item = Items(courseName, location)
+                val item = Items(2,courseName, location)
                 itemsList.add(item)
                 Log.d("test", "loadMapData1111: $item ${itemsList[i]}")
             } else {
-                val item = Items("", "")
+                val item = Items(0, "")
                 itemsList.add(item)
             }
         }
