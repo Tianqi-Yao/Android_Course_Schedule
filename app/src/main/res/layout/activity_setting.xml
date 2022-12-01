@@ -76,7 +76,7 @@
         android:id="@+id/tv_uid_setting"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="180dp"
         android:minWidth="100dp"
         android:text="@string/xxx"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -95,6 +95,17 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="@+id/tv_uid_setting"
         app:layout_constraintTop_toBottomOf="@+id/tv_uid_setting" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/user_info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

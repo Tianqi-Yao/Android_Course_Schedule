@@ -15,28 +15,6 @@ class SettingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_setting)
 
 
-
-        // get user info
-//        user?.let {
-//            // Name, email address, and profile photo Url
-//            val name = user.displayName
-//            val email = user.email
-//
-//            // Check if user's email is verified
-//            val emailVerified = user.isEmailVerified
-//
-//            // The user's ID, unique to the Firebase project. Do NOT use this value to
-//            // authenticate with your backend server, if you have one. Use
-//            // FirebaseUser.getToken() instead.
-//            val uid = user.uid
-//            Log.d("test", "onCreate: $name , $email, $emailVerified, $uid")
-//        }
-
-
-
-
-
-
         val bt_back = findViewById<Button>(R.id.btn_back_setting)
         val bt_home = findViewById<Button>(R.id.btn_home_setting)
         val bt_map = findViewById<Button>(R.id.btn_map_setting)

@@ -29,4 +29,5 @@
     <string name="update">Update</string>
     <string name="phonenumber">PhoneNumber</string>
     <string name="change_user_name">Change User Name</string>
+    <string name="user_info">User Info</string>
 </resources>

@@ -128,12 +128,13 @@ class HomeActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                Log.d("test", "onDataChange: starting loading!!!!!!!!!!!!!!!!!!"+snapshot)
+//                Log.d("test", "onDataChange: starting loading!!!!!!!!!!!!!!!!!!"+snapshot)
                 val value = snapshot.getValue<Map<String, Any>>()
 //                val value = snapshot.value as Map<String, Any>?
-                Log.d("test", "onDataChange-->value: $value")
+//                Log.d("test", "onDataChange-->value: $value")
 //                if (value != null) {
                     val itemsList = ArrayList<Items>()
+                    // ############## deal recycler view ####################
                     loadMapData(value,itemsList)
                     initRecyclerView(itemsList,R.id.recycleView,GridLayoutManager(applicationContext,7))
 //                }

@@ -49,7 +49,7 @@ class newClassActivity : AppCompatActivity() {
         }
 
         btnSubmit.setOnClickListener {
-            val username = usernameET.text.toString()
+            val username = usernameET.text.toString().uppercase()
 //            val location = locationET.text.toString()
             writeData(position, username, location, uid!!)
             finish()
