@@ -52,6 +52,11 @@ class MapPointer : AppCompatActivity() {
             // Get map
             val googleMap = mapFragment.awaitMap()
 
+            val libraryWest = LatLng(29.65130529536817, -82.34290822742967)
+
+//            googleMap.addMarker(MarkerOptions().position(libraryWest).title("Library West"))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(libraryWest,12f))
+
             addClusteredMarkers(googleMap)
 
             // Wait for map to finish loading
