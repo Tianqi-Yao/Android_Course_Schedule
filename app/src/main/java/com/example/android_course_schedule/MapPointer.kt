@@ -14,8 +14,10 @@
 
 package com.example.android_course_schedule
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
@@ -26,6 +28,8 @@ import com.google.android.gms.maps.model.*
 import com.example.android_course_schedule.place.Place
 import com.example.android_course_schedule.place.PlaceRenderer
 import com.example.android_course_schedule.place.PlacesReader
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.google.maps.android.clustering.ClusterManager
 import com.google.maps.android.ktx.addCircle
 import com.google.maps.android.ktx.addMarker
@@ -41,7 +45,7 @@ class MapPointer : AppCompatActivity() {
     // [START maps_android_add_map_codelab_ktx_coroutines]
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.avtivity_map)
+        setContentView(R.layout.activity_maps)
         val mapFragment =
             supportFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
         lifecycleScope.launchWhenCreated {
@@ -58,7 +62,31 @@ class MapPointer : AppCompatActivity() {
             places.forEach { bounds.include(it.latLng) }
             googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 20))
         }
+
+        val bt_back = findViewById<Button>(R.id.btn_back_map)
+        val bt_home = findViewById<Button>(R.id.btn_home_map)
+        val bt_setting = findViewById<Button>(R.id.btn_setting_map)
+
+        bt_setting.setOnClickListener {
+            jumpFun(SettingActivity::class.java)
+        }
+
+        bt_back.setOnClickListener {
+            finish()
+        }
+
+        bt_home.setOnClickListener {
+            jumpFun(MainActivity::class.java)
+        }
+
+
     }
+
+    private fun jumpFun(toActivity:Class<*>) {
+        val intent = Intent(this, toActivity)
+        startActivity(intent)
+    }
+
     // [END maps_android_add_map_codelab_ktx_coroutines]
 
     /**

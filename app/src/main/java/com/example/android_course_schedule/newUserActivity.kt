@@ -12,7 +12,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import java.lang.Exception
 
-class newUser : AppCompatActivity() {
+class newUserActivity : AppCompatActivity() {
     private val TAG: String = "test"
     private lateinit var auth: FirebaseAuth
 

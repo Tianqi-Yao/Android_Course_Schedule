@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val bt_signup = findViewById<Button>(R.id.btn_signup)
 
         bt_signup.setOnClickListener {
-            jumpFun(newUser::class.java,"")
+            jumpFun(newUserActivity::class.java,"")
         }
 
         bt.setOnClickListener {
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
             Log.d(TAG, "uid: ${user.uid}")
-            jumpFun(MainActivity2::class.java,user.uid)
+            jumpFun(HomeActivity::class.java,user.uid)
         }
     }
 }

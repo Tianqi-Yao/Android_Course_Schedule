@@ -3,28 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2_map"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2_setting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <fragment
-            android:id="@+id/map_fragment"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MapsActivity" />
+
 
     </LinearLayout>
 
+
     <LinearLayout
-        android:id="@+id/linearLayout2_map"
+        android:id="@+id/linearLayout2_setting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -34,7 +31,7 @@
 
 
         <Button
-            android:id="@+id/btn_home_map"
+            android:id="@+id/btn_home_setting"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +39,7 @@
             android:text="@string/home" />
 
         <Button
-            android:id="@+id/btn_map_map"
+            android:id="@+id/btn_map_setting"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,7 +47,7 @@
             android:text="@string/map" />
 
         <Button
-            android:id="@+id/btn_setting_map"
+            android:id="@+id/btn_setting_setting"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +55,7 @@
             android:text="@string/setting" />
 
         <Button
-            android:id="@+id/btn_back_map"
+            android:id="@+id/btn_back_setting"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,5 +63,4 @@
             android:text="@string/logout" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
