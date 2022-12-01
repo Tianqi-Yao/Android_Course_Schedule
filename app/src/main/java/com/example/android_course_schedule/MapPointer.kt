@@ -28,8 +28,6 @@ import com.google.android.gms.maps.model.*
 import com.example.android_course_schedule.place.Place
 import com.example.android_course_schedule.place.PlaceRenderer
 import com.example.android_course_schedule.place.PlacesReader
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.google.maps.android.clustering.ClusterManager
 import com.google.maps.android.ktx.addCircle
 import com.google.maps.android.ktx.addMarker
@@ -68,7 +66,7 @@ class MapPointer : AppCompatActivity() {
             googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 20))
         }
 
-        val bt_back = findViewById<Button>(R.id.btn_back_map)
+        val bt_search = findViewById<Button>(R.id.btn_search_map)
         val bt_home = findViewById<Button>(R.id.btn_home_map)
         val bt_setting = findViewById<Button>(R.id.btn_setting_map)
 
@@ -76,12 +74,12 @@ class MapPointer : AppCompatActivity() {
             jumpFun(SettingActivity::class.java)
         }
 
-        bt_back.setOnClickListener {
-            finish()
+        bt_search.setOnClickListener {
+            jumpFun(SearchActivity::class.java)
         }
 
         bt_home.setOnClickListener {
-            jumpFun(MainActivity::class.java)
+            jumpFun(HomeActivity::class.java)
         }
 
 

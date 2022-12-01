@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -24,18 +25,17 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        uid = intent.getStringExtra("uid").toString()
+        uid = Firebase.auth.uid.toString()
 
-        val bt_back = findViewById<Button>(R.id.btn_back)
+        val bt_search = findViewById<Button>(R.id.btn_search_home)
         val bt_map = findViewById<Button>(R.id.btn_map)
         val bt_setting = findViewById<Button>(R.id.btn_setting)
 
         bt_setting.setOnClickListener {
             jumpFun(SettingActivity::class.java)
         }
-        bt_back.setOnClickListener {
-//            Firebase.auth.signOut()
-            finish()
+        bt_search.setOnClickListener {
+            jumpFun(SearchActivity::class.java)
         }
         bt_map.setOnClickListener {
             jumpFun(MapPointer::class.java)

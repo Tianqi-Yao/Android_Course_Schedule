@@ -15,7 +15,7 @@ class SettingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_setting)
 
 
-        val bt_back = findViewById<Button>(R.id.btn_back_setting)
+        val bt_search = findViewById<Button>(R.id.btn_search_setting)
         val bt_home = findViewById<Button>(R.id.btn_home_setting)
         val bt_map = findViewById<Button>(R.id.btn_map_setting)
 
@@ -23,8 +23,8 @@ class SettingActivity : AppCompatActivity() {
             jumpFun(MapPointer::class.java)
         }
 
-        bt_back.setOnClickListener {
-            finish()
+        bt_search.setOnClickListener {
+            jumpFun(SearchActivity::class.java)
         }
 
         bt_home.setOnClickListener {

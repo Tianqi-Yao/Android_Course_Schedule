@@ -42,7 +42,7 @@
             android:text="@string/setting" />
 
         <Button
-            android:id="@+id/btn_back_setting"
+            android:id="@+id/btn_search_setting"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
